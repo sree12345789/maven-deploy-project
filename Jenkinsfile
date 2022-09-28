@@ -13,6 +13,11 @@ stages {
       sh 'mvn validate'
     }
   }
+  stage('Package') {
+    steps {
+      sh 'mvn package'
+    }
+  }
 
 }
 }
