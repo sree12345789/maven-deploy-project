@@ -13,9 +13,14 @@ stages {
       sh 'mvn validate'
     }
   }
+  stage('Compile') {
+    steps {
+      sh 'mvn compile'
+    }
+  }
   stage('Package') {
     steps {
-      sh 'mvn package'
+      sh '-Dmaven.test.skip=true package'
     }
   }
 
